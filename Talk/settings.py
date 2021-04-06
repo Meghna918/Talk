@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Accounts',
     'channels',
-    'chat'
+    'chat',
+    'rest_framework',
+
+
+
 ]
 
 MIDDLEWARE = [
@@ -72,7 +76,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Talk.wsgi.application'
 ASGI_APPLICATION = "Talk.asgi.application"
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
 
+
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -80,7 +90,7 @@ ASGI_APPLICATION = "Talk.asgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Talk',
+        'NAME': 'Chat',
         'USER': 'postgres',
         'PASSWORD': 'prettyboy@828116',
         'HOST': '127.0.0.1',
@@ -128,5 +138,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "/static",
+    BASE_DIR / "static/",
 ]

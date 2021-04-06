@@ -1,8 +1,14 @@
-from django.urls import path
+from django.urls import path,include
+from rest_framework.routers import DefaultRouter
 
 from . import views
+from chat.api import MessageModelViewset,UserModelViewset
 
+router=DefaultRouter()
+router.register('chat',MessageModelViewset,basename='message')
+router.register('user',UserModelViewset,basename='users')
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('<str:room_name>/', views.room, name='room'),
+    path('talkapi/',include(router.urls)),
+     path('home/',views.home,name='home')
+
  ]

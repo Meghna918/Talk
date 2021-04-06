@@ -8,7 +8,7 @@
 <br>
 <br>
 {% endif %}
-
+<div id="login-form">
 <h2>Sign Up!</h2>
 
 <form method="POST" action="{% url 'signup' %}" >
@@ -16,6 +16,9 @@
     Username:
     <br>
     <input type="text" name="username">
+    <br>
+    Email:
+    <input type="email" name="email">
     <br>
     Password:
     <br>
@@ -29,6 +32,6 @@
     <input type="submit" value="Sign Up!">
 
 </form>
-
+</div>
 
 {% endblock %}
