@@ -20,8 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '&qokltnc1d4i^we_ukzhy#v#+y2syr!xscsw_#p3dzi2%2cl)^'
-
+SECRET_KEY = z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -39,11 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Accounts',
     'channels',
-    'chat',
-    'rest_framework',
-
-
-
+    'chat'
 ]
 
 MIDDLEWARE = [
@@ -76,13 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Talk.wsgi.application'
 ASGI_APPLICATION = "Talk.asgi.application"
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer',
 
-
-    },
-}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -90,9 +79,9 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Chat',
-        'USER': 'postgres',
-        'PASSWORD': 'prettyboy@828116',
+        'NAME': 'Talk',
+        'USER': '',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -138,5 +127,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static/",
+    BASE_DIR / "/static",
 ]
