@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+
+</head>
+<body>
+<h1>Welcome to talk </h1>
+<input id="myInput" type="text" placeholder="Search..">
+<br>
+<table id="selectable">
+  <thead>
+
+  </thead>
+  <tbody id="myTable">
+
+  </tbody>
+</table>
+<div id="users_list">
+
+</div>
+<div id="chat-window">
+<div id="messages" class="messages">
+
+</div>
+    <input id="chat-message-input" type="text" size="100"><br>
+    <input id="chat-message-submit" type="button" value="Send">
+    </div>
+<script>
+        let sessionKey = '{{ request.session.session_key }}';
+        let currentUser = '{{ request.user.username }}';
+
+    </script>
+</body>
+
+</html>
